@@ -1,7 +1,15 @@
 def select_books_titles_and_years_in_first_series_order_by_year
   "SELECT books.title, books.year
   FROM books
+  INNER   JOIN series
   "
+"SELECT users.name, SUM(amount)
+FROM pledges
+INNER JOIN users
+ON pledges.user_id = users.id 
+GROUP BY users.name
+ORDER BY SUM(amount) ";
+end
 
 
 end
